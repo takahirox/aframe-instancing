@@ -1,0 +1,36 @@
+{
+  "name": "aframe-instancing",
+  "version": "0.0.1",
+  "description": "A-Frame instancing component",
+  "main": "index.js",
+  "scripts": {
+    "all": "npm run build && npm run build-uglify",
+    "build": "webpack index.js build/aframe-instancing.js",
+    "build-uglify": "webpack -p index.js build/aframe-instancing.min.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/takahirox/aframe-instancing.git"
+  },
+  "keywords": [
+    "aframe",
+    "aframe-vr",
+    "vr",
+    "three",
+    "threejs",
+    "mozvr",
+    "webvr"
+  ],
+  "author": "Takahiro <hogehoge@gachapin.jp> (https://github.com/takahirox)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/takahirox/aframe-instancing/issues"
+  },
+  "homepage": "https://github.com/takahirox/aframe-instancing#readme",
+  "devDependencies": {
+    "aframe": "^0.4.0",
+    "three": "^0.83.0",
+    "webpack": "^1.13.3"
+  }
+}
+
