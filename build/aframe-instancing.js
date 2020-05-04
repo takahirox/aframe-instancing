@@ -42,7 +42,7 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	/**
 	 * @author Takahiro / https://github.com/takahirox
@@ -55,7 +55,8 @@
 
 	AFRAME.registerComponent('instancing', {
 	  schema: {
-	    count: {type: 'int', default: 10000}
+	    count: {type: 'int', default: 10000},
+	    frustumCulled: {default: false}
 	  },
 
 	  init: function () {
@@ -96,9 +97,9 @@
 	      colorArray[i*3+2] = Math.random();
 	    }
 
-	    geometry.addAttribute('translate', new THREE.InstancedBufferAttribute(translateArray, 3, 1));
-	    geometry.addAttribute('vector', new THREE.InstancedBufferAttribute(vectorArray, 3, 1));
-	    geometry.addAttribute('color', new THREE.InstancedBufferAttribute(colorArray, 3, 1));
+	    geometry.setAttribute('translate', new THREE.InstancedBufferAttribute(translateArray, 3, false));
+	    geometry.setAttribute('vector', new THREE.InstancedBufferAttribute(vectorArray, 3, false));
+	    geometry.setAttribute('color', new THREE.InstancedBufferAttribute(colorArray, 3, false));
 
 	    var material = new THREE.ShaderMaterial({
 	      uniforms: {
@@ -128,6 +129,7 @@
 	    });
 
 	    var mesh = new THREE.Mesh(geometry, material);
+	    mesh.frustumCulled = this.data.frustumCulled;
 
 	    this.model = mesh;
 	    el.setObject3D('mesh', mesh);
@@ -143,5 +145,5 @@
 	});
 
 
-/***/ }
+/***/ })
 /******/ ]);
