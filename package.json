@@ -1,6 +1,6 @@
 {
   "name": "aframe-instancing",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A-Frame instancing component",
   "main": "index.js",
   "scripts": {
@@ -28,9 +28,6 @@
   },
   "homepage": "https://github.com/takahirox/aframe-instancing#readme",
   "devDependencies": {
-    "aframe": "^0.4.0",
-    "three": "^0.83.0",
     "webpack": "^1.13.3"
   }
 }
-
