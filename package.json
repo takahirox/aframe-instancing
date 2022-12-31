@@ -28,6 +28,6 @@
   },
   "homepage": "https://github.com/takahirox/aframe-instancing#readme",
   "devDependencies": {
-    "webpack": "^1.13.3"
+    "webpack": "^5.75.0"
   }
 }
